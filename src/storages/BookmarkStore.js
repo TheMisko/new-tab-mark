@@ -34,11 +34,14 @@ BookmarkStore.importBookmarks = (nodes) => {
     store.set(BookmarkStore.key, cache);
 };
 
+console.log(BookmarkStore)
+
 BookmarkStore.filterBookmarks = (searchInput, stateCallback) => {
     const bookmarks = store.get(BookmarkStore.key, []);
     const searchSegments = searchInput.trimRight().split(' ');
 
     let filtered = [...bookmarks];
+    console.log(filtered, 'filtered')
     searchSegments.forEach((segment) => {
         filtered = filtered.filter((bookmark) => bookmark.search.toLowerCase().includes(segment));
     });

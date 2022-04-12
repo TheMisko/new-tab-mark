@@ -9,6 +9,7 @@ chrome.browserAction.onClicked.addListener(() => {
 chrome.runtime.onMessage.addListener((request) => {
     if (request.importBookmarks) {
         logBookmarks('event listener: init import bookmarks');
+        console.log('cao')
         chrome.bookmarks.getTree(BookmarkStore.importBookmarks);
     }
     if (request.tts) {
